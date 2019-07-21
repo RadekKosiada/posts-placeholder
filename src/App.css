@@ -1,3 +1,7 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+.post {
+  /* text-transform: capitalize; */
 }
