@@ -28,7 +28,7 @@ class App extends Component {
         users: usersResponse.data,
         loading: false,
       })
-
+      // this.state.posts[0].user = this.state.users[0].name;
     } catch (err) {
       console.log(err);
       this.setState({
@@ -39,7 +39,9 @@ class App extends Component {
   }
   render() {
     const { posts, users, loading, error } = this.state;
-    console.log(this.state.users, this.state.posts, this.state.error)
+
+
+    console.log(users, posts, Array.isArray(posts[0]), error);
     if (error) {
       return (
         <div className="App">
@@ -55,16 +57,24 @@ class App extends Component {
         </div>
       )
     }
+
+    posts.forEach(post => {
+      users.forEach(user => {
+        if (post.userId === user.id) {
+          post.user = user.name
+        }
+      })
+    })
+
     return (
       <div className="App">
         {posts.map(post =>
           <div key={post.id}>
-          <h3 className="post">
-            {post.id}. {post.title}
-          </h3>
-          <p>{post.body}</p>
+            <h3 className="post">{post.title}</h3>
+            <h4>{post.user}</h4>
+            <p>{post.body}</p>
           </div>
-          )}
+        )}
       </div>
     );
   }
