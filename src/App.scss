@@ -1,17 +1,17 @@
 
-body {
-  background-color: lightgrey;
-}
+$body-background: lightgrey;
+$posts-background: white;
+$font-family: Arial, Helvetica, sans-serif;
 
-.App {
-  text-align: left;
+body {
+  background-color: $body-background;
 }
 
 .post {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-family;
   padding: 10px;
   margin: 10px;
-  background-color: white;
+  background-color: $posts-background;
   box-shadow: 1px 1px 2px 2px grey;
 }
 
