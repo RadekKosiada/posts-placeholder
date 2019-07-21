@@ -69,10 +69,10 @@ class App extends Component {
     return (
       <div className="App">
         {posts.map(post =>
-          <div key={post.id}>
-            <h3 className="post">{post.title}</h3>
+          <div className="post" key={post.id}>
+            <h3>{post.title}</h3>
+            <p className="post-body">{post.body}</p>
             <h4>{post.user}</h4>
-            <p>{post.body}</p>
           </div>
         )}
       </div>
