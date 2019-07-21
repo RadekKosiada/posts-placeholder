@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
 
 const postsApi = "https://jsonplaceholder.typicode.com/posts";
