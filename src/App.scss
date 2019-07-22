@@ -11,6 +11,23 @@ body {
   font-family: $font-family;
 }
 
+.nav-menu ul {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+}
+
+.nav-menu ul li {
+  font-weight: bold;
+  transition-duration: 0.75s;
+  list-style: none;
+}
+
+.nav-menu ul li:hover {
+  text-decoration: underline;
+  cursor: pointer; 
+}
+
+
 .post-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
