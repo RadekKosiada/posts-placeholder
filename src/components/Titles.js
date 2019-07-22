@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.scss';
+import {Link } from "react-router-dom";
 
 export default function Titles(props) {
   const posts = props.posts;
@@ -8,7 +9,9 @@ export default function Titles(props) {
     <div className="titles-container">
       {posts.map(post =>
         <div className="title" key={post.id}>
-          <h3>{post.title}</h3>          
+          <Link to={`/${post.title}`}>
+          <h3>{post.title}</h3>  
+          </Link>        
         </div>
       )}
     </div>

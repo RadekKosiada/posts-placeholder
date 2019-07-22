@@ -26,9 +26,13 @@ body {
   transition-duration: 1.75s;
 }
 
-.nav-menu a {
+a {
   color: black;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .nav-menu h1:hover {
