@@ -61,12 +61,17 @@ class App extends Component {
         <div className="App">
           <Nav />
 
-          <Post
-            posts={this.state.posts}
-            users={this.state.users}
+          <Route
+            path="/" exact
+            render={(props) => <Post {...props}
+              posts={this.state.posts}
+              users={this.state.users}
+            />}
           />
-          <Users 
-            users={this.state.users} 
+
+          <Route
+            path="/users" exact
+            render={(props) => <Users {...props} users={this.state.users} />}
           />
         </div>
       </Router>
