@@ -1,14 +1,12 @@
 import React from 'react';
 import '../App.scss';
 
-export default function Nav(props) { 
+export default function Nav(props) {
 
   return (
     <div className="nav-menu">
-      <ul>
-        <li>Home</li>
-        <li>Users</li>        
-      </ul>
+      <h1>Home</h1>
+      <h1>Users</h1>
     </div>
   )
 }

@@ -2,33 +2,37 @@
 $body-background: rgb(143, 165, 247);
 $posts-background: white;
 $font-family: 'Roboto Slab', serif;
+$navbar-height: 80px;
 
 body {
   background-color: $body-background;
 }
 
 .nav-menu {
+  overflow: hidden;  
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  padding-left: 10px;
+  height: $navbar-height; 
   font-family: $font-family;
-}
-
-.nav-menu ul {
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(2, 100px);
+  background-color: $body-background;
 }
 
-.nav-menu ul li {
-  font-weight: bold;
-  transition-duration: 0.75s;
-  list-style: none;
+.nav-menu h1 {
+  transition-duration: 1.75s;
 }
 
-.nav-menu ul li:hover {
+.nav-menu h1:hover {
   text-decoration: underline;
   cursor: pointer; 
 }
 
-
 .post-container {
+  margin-top: $navbar-height;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
