@@ -18,3 +18,8 @@ body {
 .post-body {
   font-style: italic;
 }
+
+.error, .loading { 
+  text-align: center;
+  font-family: $font-family;
+}

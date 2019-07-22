@@ -14,6 +14,7 @@ class App extends Component {
       error: '',
       loading: false,
     }
+    this.showMore = this.showMore.bind(this);
   }
   async componentDidMount() {
     this.setState({ loading: true });
@@ -37,24 +38,24 @@ class App extends Component {
       });
     }
   }
+  showMore(e) {
+    console.log(e.target.getAttribute("id"))
+    this.setState({
+    })
+  }
   render() {
     const { posts, users, loading, error } = this.state;
-
-
     console.log(users, posts, Array.isArray(posts[0]), error);
     if (error) {
       return (
-        <div className="App">
-          <p>{error}</p>
-        </div>
+        <p className="error">{error}</p>
+
       )
     }
 
     if (loading) {
       return (
-        <div className="App">
-          <p>Loading posts ...</p>
-        </div>
+        <h4 className="loading">Loading posts ...</h4>
       )
     }
 
@@ -71,14 +72,16 @@ class App extends Component {
         {posts.map(post =>
           <div className="post" key={post.id}>
             <h3>{post.title}</h3>
-            <p className="post-body">{post.body}</p>
-            <h4>{post.user}</h4>
+            <p id={post.id} onClick={this.showMore}>Read more ...</p>
+            <div id={post.id} className="post-container">
+              <p className="post-body">{post.body}</p>
+              <h4 className="post-user">{post.user}</h4>
+            </div>
           </div>
         )}
       </div>
     );
   }
-
 }
 
 export default App;
