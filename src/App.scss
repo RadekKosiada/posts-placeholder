@@ -7,6 +7,11 @@ body {
   background-color: $body-background;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .post {
   font-family: $font-family;
   padding: 10px;
@@ -22,4 +27,16 @@ body {
 .error, .loading { 
   text-align: center;
   font-family: $font-family;
+}
+
+@media(max-width: 1024px) {
+  .App {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 414px) {
+  .App {
+    grid-template-columns: 1fr;
+  }
 }
