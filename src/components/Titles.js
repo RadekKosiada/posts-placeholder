@@ -9,9 +9,7 @@ export default function Titles(props) {
     <div className="titles-container">
       {posts.map(post =>
         <div className="title" key={post.id}>
-          <Link to={`/${post.title}`}>
-          <h3>{post.title}</h3>  
-          </Link>        
+          <h3>{post.title}</h3>          
         </div>
       )}
     </div>
