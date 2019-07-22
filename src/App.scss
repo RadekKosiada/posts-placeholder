@@ -7,6 +7,10 @@ body {
   background-color: $body-background;
 }
 
+.nav-menu {
+  font-family: $font-family;
+}
+
 .post-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
