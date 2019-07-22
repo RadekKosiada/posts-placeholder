@@ -9,6 +9,9 @@ export default function Nav(props) {
       <Link to="/">
       <h1>Home</h1>
       </Link>
+      <Link to="/titles">
+      <h1>Titles</h1>
+      </Link>
       <Link to="/users">
       <h1>Users</h1>
       </Link>

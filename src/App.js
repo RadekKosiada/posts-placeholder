@@ -4,6 +4,7 @@ import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Post from './components/Post';
 import Users from './components/Users';
+import Titles from './components/Titles';
 import Nav from './components/Nav';
 
 
@@ -70,8 +71,15 @@ class App extends Component {
           />
 
           <Route
+            path="/titles" exact
+            render={(props) => <Titles {...props}
+              posts={this.state.posts} />}
+          />
+
+          <Route
             path="/users" exact
-            render={(props) => <Users {...props} users={this.state.users} />}
+            render={(props) => <Users {...props}
+              users={this.state.users} />}
           />
         </div>
       </Router>

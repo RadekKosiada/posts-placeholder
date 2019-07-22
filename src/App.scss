@@ -18,12 +18,15 @@ body {
   font-family: $font-family;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(2, 100px);
+  grid-template-columns: repeat(3, 100px);
   background-color: $body-background;
 }
 
 .nav-menu h1 {
   transition-duration: 1.75s;
+}
+
+.nav-menu a {
   color: black;
   text-decoration: none;
 }
@@ -38,9 +41,23 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-.users-container {
+.users-container, .titles-container {
   margin-left: 10px;
   font-family: $font-family;
+  margin-top: $navbar-height;
+  text-align: center;
+}
+
+.titles-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.title {
+  padding: 20px;
+  margin: 10px;
+  background-color: $posts-background;
+  margin: 10px;
 }
 .post {
   font-family: $font-family;
@@ -59,9 +76,6 @@ body {
   font-style: italic;
 }
 
-.users-container {
-  margin-top: $navbar-height;
-}
 .error, .loading { 
   text-align: center;
   font-family: $font-family;
@@ -71,10 +85,17 @@ body {
   .post-container {
     grid-template-columns: repeat(3, 1fr);
   }
+  .titles-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media(max-width: 414px) {
   .post-container {
+    grid-template-columns: 1fr;
+  }
+
+  .titles-container {
     grid-template-columns: 1fr;
   }
 }
