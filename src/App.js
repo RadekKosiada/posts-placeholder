@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Post from './components/Post';
 import Nav from './components/Nav';
+
 
 const postsApi = "https://jsonplaceholder.typicode.com/posts";
 const usersApi = "https://jsonplaceholder.typicode.com/users";
@@ -54,13 +56,15 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <Nav />
-        <Post 
-          posts={this.state.posts}
-          users={this.state.users}        
-        />
-      </div>
+      <Router>
+        <div className="App">
+          <Nav />
+          <Post
+            posts={this.state.posts}
+            users={this.state.users}
+          />
+        </div>
+      </Router>
     );
   }
 }
