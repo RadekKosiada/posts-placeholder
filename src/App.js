@@ -3,6 +3,7 @@ import './App.scss';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Post from './components/Post';
+import Users from './components/Users';
 import Nav from './components/Nav';
 
 
@@ -59,9 +60,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <Nav />
+
           <Post
             posts={this.state.posts}
             users={this.state.users}
+          />
+          <Users 
+            users={this.state.users} 
           />
         </div>
       </Router>

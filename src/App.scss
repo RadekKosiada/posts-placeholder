@@ -36,7 +36,10 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
-
+.users-container {
+  margin-left: 10px;
+  font-family: $font-family;
+}
 .post {
   font-family: $font-family;
   padding: 20px;
