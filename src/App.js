@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import axios from 'axios';
+import Post from './components/post';
 
 const postsApi = "https://jsonplaceholder.typicode.com/posts";
 const usersApi = "https://jsonplaceholder.typicode.com/users";
@@ -28,7 +29,6 @@ class App extends Component {
         users: usersResponse.data,
         loading: false,
       })
-      // this.state.posts[0].user = this.state.users[0].name;
     } catch (err) {
       console.log(err);
       this.setState({
@@ -39,12 +39,10 @@ class App extends Component {
   }
 
   render() {
-    const { posts, users, loading, error } = this.state;
-    console.log(users, posts, Array.isArray(posts[0]), error);
+    const { loading, error } = this.state;
     if (error) {
       return (
         <p className="error">{error}</p>
-
       )
     }
 
@@ -54,23 +52,12 @@ class App extends Component {
       )
     }
 
-    posts.forEach(post => {
-      users.forEach(user => {
-        if (post.userId === user.id) {
-          post.user = user.name
-        }
-      })
-    })
-
     return (
       <div className="App">
-        {posts.map(post =>
-          <div className="post" key={post.id}>
-            <h3>{post.title}</h3>
-            <p className="post-body">{post.body}</p>
-            <h4 className="post-user">{post.user}</h4>
-          </div>
-        )}
+        <Post 
+          posts={this.state.posts}
+          users={this.state.users}        
+        />
       </div>
     );
   }
