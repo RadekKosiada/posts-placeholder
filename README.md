@@ -1,7 +1,7 @@
-#master branch
+# master branch
 Displays all posts and details (title, post author, post body) in one view
 
-#router branch
+# router branch
 Displays content on 3 different pages using React Router 4.
 + all posts and details (title, post author, post body) in one view on '/';
 + only titles on '/titles';
