@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import axios from 'axios';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Post from './components/Post';
+import Post from './components/Posts';
 import Users from './components/Users';
 import Titles from './components/Titles';
 import Nav from './components/Nav';
