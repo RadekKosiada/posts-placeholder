@@ -39,24 +39,14 @@ class App extends Component {
   }
 
   render() {
-    const { loading, error } = this.state;
-    if (error) {
-      return (
-        <p className="error">{error}</p>
-      )
-    }
-
-    if (loading) {
-      return (
-        <h4 className="loading">Loading posts ...</h4>
-      )
-    }
 
     return (
       <div className="App">
         <Post 
           posts={this.state.posts}
-          users={this.state.users}        
+          users={this.state.users}  
+          loading={this.state.loading}
+          error={this.state.error}      
         />
       </div>
     );

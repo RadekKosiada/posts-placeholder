@@ -2,7 +2,20 @@ import React, { Component } from 'react';
 import '../App.scss';
 
 export default function Post(props) {
-  const { posts, users } = props;
+
+  const { posts, users, loading, error } = props;
+
+  if (error) {
+    return (
+      <p className="error">{error}</p>
+    )
+  }
+
+  if (loading) {
+    return (
+      <h4 className="loading">Loading posts ...</h4>
+    )
+  }
 
   posts.forEach(post => {
     users.forEach(user => {
